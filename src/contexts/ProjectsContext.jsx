@@ -9,7 +9,7 @@ export const ProjectProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const fetchProjects = async () => {
     try {
-      const response = await fetch("http://localhost:4000/projects", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/projects", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -44,7 +44,7 @@ export const ProjectProvider = ({ children }) => {
         name,
         description,
       };
-      const response = await fetch("http://localhost:4000/projects", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export const ProjectProvider = ({ children }) => {
     if (!projectId) return;
     try {
       const response = await fetch(
-        `http://localhost:4000/projects/${projectId}`,
+        `https://fsp-1-assignment-backend.vercel.app/projects/${projectId}`,
         {
           method: "DELETE",
           headers: {

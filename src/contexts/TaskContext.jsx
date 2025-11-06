@@ -26,7 +26,7 @@ export const TaskProvider = ({ children }) => {
 
       const queryString = query.length != 0 ? `?${query.join("&")}` : "";
       const response = await fetch(
-        `http://localhost:4000/tasks${queryString}`,
+        `https://fsp-1-assignment-backend.vercel.app/tasks${queryString}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ export const TaskProvider = ({ children }) => {
 
   const fetchTaskDetails = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/tasks/${id}`, {
+      const response = await fetch(`https://fsp-1-assignment-backend.vercel.app/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           "Content-Type": "application/json",
@@ -101,7 +101,7 @@ export const TaskProvider = ({ children }) => {
         tags: tag,
         timeToComplete: timeToClose,
       };
-      const response = await fetch("http://localhost:4000/tasks", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/tasks", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ export const TaskProvider = ({ children }) => {
     if (!id) return;
     if (!updatedData) return;
     try {
-      const response = await fetch(`http://localhost:4000/tasks/${id}`, {
+      const response = await fetch(`https://fsp-1-assignment-backend.vercel.app/tasks/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -150,7 +150,7 @@ export const TaskProvider = ({ children }) => {
   const deleteTask = async (taskId) => {
     if (!taskId) return;
     try {
-      const response = await fetch(`http://localhost:4000/tasks/${taskId}`, {
+      const response = await fetch(`https://fsp-1-assignment-backend.vercel.app/tasks/${taskId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,

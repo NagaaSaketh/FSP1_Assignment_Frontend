@@ -9,7 +9,7 @@ export const OwnerProvider = ({children})=>{
     const fetchOwners = async()=>{
         const token = localStorage.getItem("userToken")
         try{
-            const response = await fetch("http://localhost:4000/users",{
+            const response = await fetch("https://fsp-1-assignment-backend.vercel.app/users",{
                 headers:{
                     Authorization : `Bearer ${token}`,
                     "Content-Type":"application/json",

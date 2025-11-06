@@ -10,7 +10,7 @@ export const TeamProvider = ({ children }) => {
   const fetchTeams = async () => {
     const token = localStorage.getItem("userToken");
     try {
-      const response = await fetch("http://localhost:4000/teams", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/teams", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export const TeamProvider = ({ children }) => {
         description
       }
 
-      const response = await fetch("http://localhost:4000/teams",{
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/teams",{
         method:"POST",
         headers:{
           Authorization:`Bearer ${token}`,
@@ -72,7 +72,7 @@ export const TeamProvider = ({ children }) => {
     if (!teamId) return;
     try {
       const response = await fetch(
-        `http://localhost:4000/teams/${teamId}`,
+        `https://fsp-1-assignment-backend.vercel.app/teams/${teamId}`,
         {
           method: "DELETE",
           headers: {

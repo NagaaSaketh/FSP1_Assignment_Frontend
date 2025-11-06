@@ -14,7 +14,7 @@ export const ReportProvider = ({ children }) => {
   const [tasksClosedByOwner, setTasksClosedByOwner] = useState("");
   const fetchTasksClosed = async () => {
     try {
-      const response = await fetch("http://localhost:4000/report/last-week", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/report/last-week", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const ReportProvider = ({ children }) => {
 
   const workPending = async () => {
     try {
-      const response = await fetch("http://localhost:4000/report/pending", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/report/pending", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const ReportProvider = ({ children }) => {
   const fetchTasksClosedByTeam = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/report/closed-tasks",
+        "https://fsp-1-assignment-backend.vercel.app/report/closed-tasks",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -74,7 +74,7 @@ export const ReportProvider = ({ children }) => {
   const fetchTasksClosedByOwner = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/report/closed-tasks?groupBy=owner",
+        "https://fsp-1-assignment-backend.vercel.app/report/closed-tasks?groupBy=owner",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("userToken")}`,

@@ -9,7 +9,7 @@ export const TagProvider = ({ children }) => {
   const fetchTags = async () => {
     const token = localStorage.getItem("userToken");
     try {
-      const response = await fetch("http://localhost:4000/tags", {
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/tags", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const TagProvider = ({ children }) => {
       name
     }
     try{
-      const response = await fetch("http://localhost:4000/tags",{
+      const response = await fetch("https://fsp-1-assignment-backend.vercel.app/tags",{
         method:"POST",
         headers:{
           Authorization:`Bearer ${localStorage.getItem("userToken")}`,
