@@ -25,12 +25,10 @@ const TaskDetails = () => {
   const { owners } = useOwnerContext();
   const { tags } = useTagContext();
 
-  // ✅ Fetch task details
   useEffect(() => {
     if (taskId) fetchTaskDetails(taskId);
   }, [taskId]);
 
-  // ✅ Pre-fill modal fields when taskInfo loads
   useEffect(() => {
     if (taskInfo) {
       setProject(taskInfo.project?._id || "");
@@ -100,7 +98,6 @@ const TaskDetails = () => {
         </div>
       </div>
 
-      {/* ✅ EDIT MODAL */}
       {showModal && (
         <div
           className="modal fade show d-block"
